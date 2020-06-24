@@ -18,11 +18,15 @@
     <main>
 
         <label for="name">Type Your Name</label>
-        <input required type="text" name="Name" autocomplete="name" placeholder="Accha Baccha" id="name" minlength="3" maxlength="16">
+        <input required type="text" name="Name" autocomplete="name" placeholder="Accha Baccha" id="name" minlength="3"
+            maxlength="16">
         <Button id="submitBtn">Get Certificate</Button>
 
 
     </main>
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="./FileSaver.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
     <script src="./index.js"></script>
 </body>
 

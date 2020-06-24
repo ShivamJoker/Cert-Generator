@@ -1,9 +1,8 @@
-import { PDFDocument, rgb, degrees } from "pdf-lib";
-import FileSaver from "file-saver";
-import fontkit from "@pdf-lib/fontkit";
-
 const userName = document.getElementById("name");
 const submitBtn = document.getElementById("submitBtn");
+
+const { PDFDocument, rgb, degrees } = PDFLib;
+
 
 const capitalize = (str, lower = false) =>
   (lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
@@ -23,7 +22,7 @@ submitBtn.addEventListener("click", () => {
 });
 
 const generatePDF = async (name) => {
-  const existingPdfBytes = await fetch(require("url:./cert.pdf")).then((res) =>
+  const existingPdfBytes = await fetch("./cert.pdf").then((res) =>
     res.arrayBuffer()
   );
 
@@ -32,9 +31,9 @@ const generatePDF = async (name) => {
   pdfDoc.registerFontkit(fontkit);
 
   //get font
-  const fontBytes = await fetch(
-    require("url:./Sanchez-Regular.ttf")
-  ).then((res) => res.arrayBuffer());
+  const fontBytes = await fetch("./Sanchez-Regular.ttf").then((res) =>
+    res.arrayBuffer()
+  );
 
   // Embed our custom font in the document
   const SanChezFont = await pdfDoc.embedFont(fontBytes);
@@ -61,10 +60,14 @@ const generatePDF = async (name) => {
   // const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
   // document.getElementById("pdf").src = pdfDataUri;
 
-  var file = new File([pdfBytes], "Padhega India Subscription Certificate.pdf", {
-    type: "application/pdf;charset=utf-8",
-  });
-  FileSaver.saveAs(file);
+  var file = new File(
+    [pdfBytes],
+    "Padhega India Subscription Certificate.pdf",
+    {
+      type: "application/pdf;charset=utf-8",
+    }
+  );
+ saveAs(file);
 };
 
 // init();
