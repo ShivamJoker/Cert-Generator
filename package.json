@@ -5,7 +5,7 @@
   "browserslist": [
     "last 3 Chrome versions"
   ],
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "parcel serve src/index.html --open",
     "build": "parcel build src/index.html"
