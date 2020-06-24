@@ -8,7 +8,7 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel serve ./src/index.html --open",
-    "build": "parcel build ./src/index.html --dist-dir ./dist"
+    "build": "parcel build ./src/index.html --dist-dir dist"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,7 @@
     "pdf-lib": "^1.8.0"
   },
   "devDependencies": {
-    "parcel": "2.0.0-alpha.3.2",
+    "parcel": "^2.0.0-nightly.314",
     "parcel-plugin-static-files-copy": "^2.4.3"
   }
 }
