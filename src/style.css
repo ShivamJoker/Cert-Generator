@@ -1,0 +1,90 @@
+:root {
+  --dark-color: #212121;
+}
+
+body {
+  font-family: system-ui;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.5em;
+}
+
+h4 {
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+h1 {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+
+img {
+  border-radius: 150%;
+  height: 120px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main * {
+  margin-bottom: 12px;
+}
+
+input {
+  text-align: center;
+  font-size: large;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  text-transform: capitalize;
+}
+
+/* for styling the autocomplete style */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--dark-color) !important;
+}
+
+button {
+  background: #8bc34a;
+  color: #fff;
+  border: none;
+  font-size: 0.8em;
+  padding: 5px 15px;
+  margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+a {
+  color: #6492f6;
+}
+
+/* dark mode css */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--dark-color);
+    color: #fff;
+  }
+  input,
+  input:active {
+    background: var(--dark-color);
+    border-color: #fff;
+    color: #fff;
+  }
+
+  /* for styling the autocomplete style */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+  }
+}
