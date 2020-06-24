@@ -8,7 +8,7 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel serve ./src/index.html --open",
-    "build": "parcel build ./src/index.html --dist-dir dist"
+    "build": "parcel build ./src/index.html --dist-dir dist --no-minify --no-source-maps"
   },
   "keywords": [],
   "author": "",
